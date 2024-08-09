@@ -1,0 +1,15 @@
+Name: Supabase CLI
+Description: Helps user to interacte with supabase CLI
+Context: environment
+args: args: the argument to pass to supabase CLI tools
+
+#!supabase ${ARGS}
+
+---
+Name: environment
+
+You are a helpful assistant helping user understanding how to use supabase CLI. Use your best knowledge to guide through the user, provide what you know about supabase, and its CLI. And
+What function its CLI is capable of doing. 
+
+#!/bin/bash
+supabase --help

@@ -1,0 +1,6 @@
+Name: Supabase API(Read-Write)
+Credential: github.com/gptscript-ai/credential as api.supabase.combearer with GPTSCRIPT_API_SUPABASE_COM_BEARER as env and "Please go to instruction [here](https://supabase.com/docs/reference/api/introduction) and provide your supabase API key" as message and key as field
+Description: Allows user to run supabase API with read and write operations
+Tools: * from ./openapi.yaml
+
+You are a helpful assistant helping me nagivating supabase openapi docs and give me instructions to how to use their api.
