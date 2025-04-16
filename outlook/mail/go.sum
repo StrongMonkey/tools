@@ -164,6 +164,8 @@ github.com/gorilla/websocket v1.4.1 h1:q7AeDBpnBk8AogcD4DSag/Ukw/KV+YhzLj2bP5HvK
 github.com/gorilla/websocket v1.4.1/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/gptscript-ai/go-gptscript v0.9.6-0.20250204133419-744b25b84a61 h1:QxLjsLOYlsVLPwuRkP0Q8EcAoZT1s8vU2ZBSX0+R6CI=
 github.com/gptscript-ai/go-gptscript v0.9.6-0.20250204133419-744b25b84a61/go.mod h1:/FVuLwhz+sIfsWUgUHWKi32qT0i6+IXlUlzs70KKt/Q=
+github.com/gptscript-ai/go-gptscript v0.9.6-0.20250331192455-415de950d72d h1:S9gfdnk0VK3dSFOHn/rhPWBbbOoC64uy38rRKIPLLcQ=
+github.com/gptscript-ai/go-gptscript v0.9.6-0.20250331192455-415de950d72d/go.mod h1:QvGPZoRuAiA8P5EzPI05kTrs+LZ0ipHywUGsKruSknw=
 github.com/hupe1980/go-textractor v0.0.9 h1:hrVh7HnANQ6SZVziLtjOhfK00Xe+prVGuGLui6/6FqQ=
 github.com/hupe1980/go-textractor v0.0.9/go.mod h1:hKvHHZENWuXgDNHz9nluoDDLNlbkcMSLeBDrgNHBhZ0=
 github.com/iwilltry42/golc v0.0.113-0.20240802113826-d065a3c5b0c7 h1:2AzzbKVW1iP2F+ovqJKq801l6tgxYPt9m2zFKbs+i/Y=
@@ -255,6 +257,10 @@ github.com/oasdiff/yaml v0.0.0-20250309154309-f31be36b4037 h1:G7ERwszslrBzRxj//J
 github.com/oasdiff/yaml v0.0.0-20250309154309-f31be36b4037/go.mod h1:2bpvgLBZEtENV5scfDFEtB/5+1M4hkQhDQrccEJ/qGw=
 github.com/oasdiff/yaml3 v0.0.0-20250309153720-d2182401db90 h1:bQx3WeLcUWy+RletIKwUIt4x3t8n2SxavmoclizMb8c=
 github.com/oasdiff/yaml3 v0.0.0-20250309153720-d2182401db90/go.mod h1:y5+oSEHCPT/DGrS++Wc/479ERge0zTFxaF8PbGKcg2o=
+github.com/obot-platform/obot/apiclient v0.0.0-20250415222707-2df767e88996 h1:98BuYFWTZwZlv6XIiDE2WjVRNRJozEAwtOEPnSl9+Nk=
+github.com/obot-platform/obot/apiclient v0.0.0-20250415222707-2df767e88996/go.mod h1:6xuT2XK3SdzTxEk8PSpE9KI6Kf/RDf/jw6wRaHNs6m0=
+github.com/obot-platform/obot/logger v0.0.0-20241217130503-4004a5c69f32 h1:PooNaWBm+SVJ5nif7t9eAy/bBgN5r6x2tWW9Za51gKk=
+github.com/obot-platform/obot/logger v0.0.0-20241217130503-4004a5c69f32/go.mod h1:mstAp0dK+o0h8AGcfFjyMOwTc0DgIFnKldBARfYYQzI=
 github.com/obot-platform/pdf-parser v0.0.0-20250326062146-23d345e30ecc h1:9Ly1mtznK2gU/rXJMF3m9HSFZhmq9u5D0KKzDwdsnoM=
 github.com/obot-platform/pdf-parser v0.0.0-20250326062146-23d345e30ecc/go.mod h1:urpFdHcDUS6W+iM1xHOlAAYbg2U2esJkLxHTwIcx6gI=
 github.com/olekukonko/tablewriter v0.0.0-20180506121414-d4647c9c7a84/go.mod h1:vsDQFd/mU46D+Z4whnwzcISnGGzXWMclvtLoiIKAKIo=
@@ -307,6 +313,8 @@ github.com/serpapi/google-search-results-golang v0.0.0-20240325113416-ec93f51064
 github.com/serpapi/google-search-results-golang v0.0.0-20240325113416-ec93f510648e/go.mod h1:B4KcaaGbSpn3vq3FxSCsEJrBirStags89KTusB2of58=
 github.com/simplereach/timeutils v1.2.0/go.mod h1:VVbQDfN/FHRZa1LSqcwo4kNZ62OOyqLLGQKYB3pB0Q8=
 github.com/sirupsen/logrus v1.7.0/go.mod h1:yWOB1SBYBC5VeMP7gHvWumXLIWorT60ONWic61uBYv0=
+github.com/sirupsen/logrus v1.9.3 h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=
+github.com/sirupsen/logrus v1.9.3/go.mod h1:naHLuLoDiP4jHNo9R0sCBMtWGeIprob74mVsIT4qYEQ=
 github.com/skeema/knownhosts v1.3.1 h1:X2osQ+RAjK76shCbvhHHHVl3ZlgDm8apHEHFqRjnBY8=
 github.com/skeema/knownhosts v1.3.1/go.mod h1:r7KTdC8l4uxWRyK2TpQZ/1o5HaSzh06ePQNxPwTcfiY=
 github.com/ssor/bom v0.0.0-20170718123548-6386211fdfcf h1:pvbZ0lM0XWPBqUKqFU8cmavspvIl9nulOYwdy6IFRRo=

@@ -1,21 +1,24 @@
 package commands
 
 import (
-	"bytes"
 	"context"
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"strings"
 
 	"github.com/gptscript-ai/tools/outlook/common/id"
 	"github.com/gptscript-ai/tools/outlook/mail/pkg/client"
 	"github.com/gptscript-ai/tools/outlook/mail/pkg/global"
-	"github.com/obot-platform/tools/knowledge/pkg/datastore/documentloader"
-	"github.com/pkoukk/tiktoken-go"
+	"github.com/obot-platform/obot/apiclient"
 )
 
-func GetAttachment(ctx context.Context, messageID, attachmentID string) error {
+type DownloadAttachmentOpts struct {
+	ThreadID    string
+	ProjectID   string
+	AssistantID string
+}
+
+func DownloadAttachment(ctx context.Context, messageID, attachmentID string, obotClient *apiclient.Client, opts *DownloadAttachmentOpts) error {
 	trueMessageID, err := id.GetOutlookID(ctx, messageID)
 	if err != nil {
 		return fmt.Errorf("failed to get outlook ID: %w", err)
@@ -26,13 +29,11 @@ func GetAttachment(ctx context.Context, messageID, attachmentID string) error {
 		return fmt.Errorf("failed to create client: %w", err)
 	}
 
-	// Get attachment as a Parsable object
 	requestInfo, err := c.Me().Messages().ByMessageId(trueMessageID).Attachments().ByAttachmentId(attachmentID).ToGetRequestInformation(ctx, nil)
 	if err != nil {
 		return fmt.Errorf("failed to create request info: %w", err)
 	}
 
-	// Execute request
 	response, err := c.BaseRequestBuilder.RequestAdapter.SendPrimitive(ctx, requestInfo, "[]byte", nil)
 	if err != nil {
 		return fmt.Errorf("failed to get attachment: %w", err)
@@ -59,40 +60,19 @@ func GetAttachment(ctx context.Context, messageID, attachmentID string) error {
 		return fmt.Errorf("failed to decode attachment content: %w", err)
 	}
 
-	filetype := data["contentType"].(string)
-
-	loader := documentloader.DefaultDocLoaderFunc(filetype, documentloader.DefaultDocLoaderFuncOpts{})
-
-	docs, err := loader(ctx, bytes.NewReader(rawContent))
-	if err != nil {
-		return fmt.Errorf("failed to load documents from attachment: %w", err)
+	name, ok := data["name"].(string)
+	if !ok {
+		return fmt.Errorf("failed to get name from attachment")
 	}
 
-	if len(docs) == 0 {
-		return fmt.Errorf("no data parsed from attachment")
+	if err := obotClient.UploadThreadFile(ctx, opts.ProjectID, opts.ThreadID, opts.AssistantID, name, rawContent); err != nil {
+		return fmt.Errorf("failed to upload file: %w", err)
 	}
 
-	var texts []string
-	for _, doc := range docs {
-		if len(doc.Content) == 0 {
-			continue
-		}
-		texts = append(texts, doc.Content)
+	if err := obotClient.UploadKnowledgeFile(ctx, opts.ProjectID, opts.ThreadID, opts.AssistantID, name, rawContent); err != nil {
+		return fmt.Errorf("failed to upload knowledge file: %w", err)
 	}
 
-	result := strings.Join(texts, "\n---docbreak---\n")
-
-	// Check if text is too large by counting tokens
-	tokenizer, err := tiktoken.EncodingForModel("gpt-4")
-	if err != nil {
-		return fmt.Errorf("failed to create tokenizer: %w", err)
-	}
-
-	tokens := tokenizer.Encode(result, nil, nil)
-	if len(tokens) > 10000 {
-		return fmt.Errorf("attachment content is too large (over 10k tokens)")
-	}
-
-	fmt.Println(result)
+	fmt.Printf("Successfully downloaded attachment '%s'\n", name)
 	return nil
 }

@@ -6,6 +6,7 @@ replace (
 	github.com/gptscript-ai/tools/outlook/common => ../common
 	github.com/hupe1980/golc => github.com/iwilltry42/golc v0.0.113-0.20240802113826-d065a3c5b0c7 // nbformat extension
 	github.com/ledongthuc/pdf => github.com/iwilltry42/pdf v0.0.0-20240517145113-99fbaebc5dd3
+	github.com/obot-platform/obot/apiclient => ../../../otto/apiclient
 	github.com/obot-platform/tools/knowledge => ../../knowledge
 	github.com/philippgille/chromem-go => github.com/iwilltry42/chromem-go v0.0.0-20250218054308-81ac4c30d459
 	github.com/tmc/langchaingo => github.com/StrongMonkey/langchaingo v0.0.0-20240617180437-9af4bee04c8b
@@ -15,10 +16,11 @@ require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v1.15.0
 	github.com/JohannesKaufmann/html-to-markdown v1.6.0
 	github.com/gomarkdown/markdown v0.0.0-20240930133441-72d49d9543d8
-	github.com/gptscript-ai/go-gptscript v0.9.6-0.20250204133419-744b25b84a61
+	github.com/gptscript-ai/go-gptscript v0.9.6-0.20250331192455-415de950d72d
 	github.com/gptscript-ai/tools/outlook/common v0.0.0-20241008222508-3c6174b443e7
 	github.com/microsoft/kiota-abstractions-go v1.7.0
 	github.com/microsoftgraph/msgraph-sdk-go v1.51.0
+	github.com/obot-platform/obot/apiclient v0.0.0-20250415222707-2df767e88996
 	github.com/obot-platform/tools/knowledge v0.6.9
 )
 
@@ -133,9 +135,11 @@ require (
 	github.com/mohae/deepcopy v0.0.0-20170929034955-c48cc78d4826 // indirect
 	github.com/oasdiff/yaml v0.0.0-20250309154309-f31be36b4037 // indirect
 	github.com/oasdiff/yaml3 v0.0.0-20250309153720-d2182401db90 // indirect
+	github.com/obot-platform/obot/logger v0.0.0-20241217130503-4004a5c69f32 // indirect
 	github.com/obot-platform/pdf-parser v0.0.0-20250326062146-23d345e30ecc // indirect
 	github.com/perimeterx/marshmallow v1.1.5 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/std-uritemplate/std-uritemplate/go v0.0.57 // indirect
 	github.com/stretchr/testify v1.10.0 // indirect
 	go.opentelemetry.io/otel v1.26.0 // indirect
